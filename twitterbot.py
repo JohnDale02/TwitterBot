@@ -42,7 +42,7 @@ class Twitterbot:
         time.sleep(5)
 
         email = bot.find_element_by_xpath(
-            '//*[@id="name"]'
+            '//*[@name="text"]'
         )
 
         # sends the email to the email input
@@ -52,7 +52,7 @@ class Twitterbot:
         # enter our username if requested for extra authentication
         try:
             username = bot.find_element_by_xpath(
-                '//*[@id = "name"]'
+                '//*[@name="text"]'
             )
             username.send_keys(self.username)
             time.sleep(5)
@@ -61,7 +61,7 @@ class Twitterbot:
             print("No extra security feature requested.")
         
         password = bot.find_element_by_xpath(
-            '//*[@id ="react-root"]/div / div / div[2]/main / div / div / form / div / div[2]/label / div / div[2]/div / input'
+            '//*[@name="password"]'
         )
 
         # sends the password to the password input
